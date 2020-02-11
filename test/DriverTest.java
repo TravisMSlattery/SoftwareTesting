@@ -17,6 +17,11 @@ public class DriverTest {
 
         assertEquals(101,Travis.getDriverNum());
     }
+    @Test
+    public void getDriverNumFalseTest() {
+
+        assertFalse(Travis.getDriverNum() == 102);
+    }
 
     @Test
     public void bannedFalseTest() {
@@ -24,6 +29,10 @@ public class DriverTest {
         assertFalse(Travis.check_status());
     }
 
+    @Test
+    public void bannedTrueTest() {
+        assertTrue(Travis.check_status() == true);
+    }
 
     @Test
     public void ifNameFailsTest(){

@@ -6,7 +6,7 @@ public class Driver {
 
     private String driverName;
 
-    private boolean banned = false;
+    private boolean banned = true;
 
 
     public Driver(String driverName, int driverNum) {
