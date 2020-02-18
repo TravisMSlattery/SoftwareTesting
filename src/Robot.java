@@ -4,14 +4,23 @@ public class Robot {
 
     private String name;
     private boolean working = false;
+    private int age;
 
 
     public String getName() {
         return name;
     }
+    public int getAge() {
+        return age;
+    }
 
     public Robot(String name) {
         setName(name);
+
+    }
+    public Robot(String name,int age) {
+        setName(name);
+        setAge(age);
     }
 
     public void setName(String name) {
@@ -19,6 +28,15 @@ public class Robot {
             throw new IllegalArgumentException();
         }
         this.name = name;
+    }
+
+    public void setAge(int age) {
+        if(age <= 30){
+            this.age = age;
+        }else{
+            throw new IllegalArgumentException();
+        }
+
     }
 
     public boolean isWorking(){
@@ -40,9 +58,29 @@ public class Robot {
 
     }
 
-    public void waitTillWorking() throws InterruptedException{
+    public String checkage() {
+        if (age <= 20) {
+            return "Age ok";
+        } else {
+            return "Too old";
+        }
+
+    }
+        public void waitTillWorking() throws InterruptedException{
         sleep(100);
     }
+    public void sendAgeMsg() throws IllegalArgumentException {
+        try {
+            if (age > 25) {
+                throw new IllegalArgumentException("Age too old");
+            }
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error " + e.getMessage());
+        }
+        System.out.println( "Age ok");
+    }
+
 
 
 }

@@ -4,6 +4,11 @@ import java.time.Duration;
 
 import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class RobotTest {
     Robot buddy = new Robot("Buddy");
@@ -54,4 +59,6 @@ class RobotTest {
     public void timeOutExceededTest() {
         assertTimeout(ofMillis(500), ()-> { buddy.waitTillWorking();});
     }
+
+
 }
